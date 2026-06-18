@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>飞书 - Nike GC</title>
+<link rel="stylesheet" href="feishu.css">
+</head>
+<body>
+
+<div class="phone">
+
+  <!-- iOS status bar (always visible) -->
+  <div class="statusbar">
+    <span class="statusbar-time">9:41</span>
+    <div class="statusbar-right">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 22h2v-8H2v8zm5 0h2V10H7v12zm5 0h2V6h-2v16zm5 0h2V2h-2v20z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C7 3 2.7 5.5 0 9.3L12 22l12-12.7C21.3 5.5 17 3 12 3z"/></svg>
+      <svg viewBox="0 0 28 14" fill="currentColor"><rect x="0" y="1" width="22" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1"/><rect x="2" y="3" width="16" height="8" rx="1.5"/><rect x="23" y="5" width="2" height="4" rx="1"/></svg>
+    </div>
+  </div>
+
+  <!-- Topbar (page-aware title set per page in JS) -->
+  <div class="topbar" id="topbar">
+    <div class="topbar-actions">
+      <button class="topbar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+    </div>
+    <div class="topbar-title" id="topbar-title">消息</div>
+    <div class="topbar-actions">
+      <button class="topbar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scrollable page area -->
+  <div class="phone-scroll" id="scroll">
+
+    <!-- ============ PAGE: MESSAGES (default Feishu home) ============ -->
+    <div class="page active" id="page-messages">
+
+      <!-- Nike banner (CC promotion) -->
+      <div class="banner" data-app="retaillink">
+        <div>
+          <div class="banner-title">NIKE GC Retail Link</div>
+          <div class="banner-subtitle">区域运营 · 巡店 · 顾客反馈</div>
+        </div>
+        <div class="banner-swoosh">✓</div>
+      </div>
+
+      <!-- Workbench: Nike H5 custom apps pinned -->
+      <div class="workbench">
+        <div class="section-header" style="padding:0">
+          <span class="section-title">Nike 工作台</span>
+          <span class="section-more">管理</span>
+        </div>
+        <div class="workbench-grid">
+
+          <button class="workbench-app" data-app="xuedao">
+            <div class="workbench-app-icon xuedao">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l5-15 4 9 3-6 4 12z"/></svg>
+            </div>
+            <div class="workbench-app-name">学道</div>
+          </button>
+
+          <button class="workbench-app" data-app="retaillink">
+            <div class="workbench-app-icon retaillink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+            </div>
+            <div class="workbench-app-name">Retail Link</div>
+          </button>
+
+          <button class="workbench-app" data-nav="training">
+            <div class="workbench-app-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4-10-4z"/><path d="M6 10v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>
+            </div>
+            <div class="workbench-app-name">培训库</div>
+          </button>
+
+          <button class="workbench-app" data-nav="live">
+            <div class="workbench-app-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+            </div>
+            <div class="workbench-app-name">直播</div>
+          </button>
+
+          <button class="workbench-app" data-app="retaillink">
+            <div class="workbench-app-icon retaillink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div class="workbench-app-name">OPR 巡店</div>
+          </button>
+
+          <button class="workbench-app" data-app="retaillink">
+            <div class="workbench-app-icon retaillink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12c2-4 6-7 9-7s7 3 9 7c-2 4-6 7-9 7s-7-3-9-7z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            </div>
+            <div class="workbench-app-name">Listen U</div>
+          </button>
+
+          <button class="workbench-app">
+            <div class="workbench-app-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v6H4z"/><path d="M4 14h16v6H4z"/><circle cx="8" cy="7" r="0.5" fill="currentColor"/><circle cx="8" cy="17" r="0.5" fill="currentColor"/></svg>
+            </div>
+            <div class="workbench-app-name">LIDAR</div>
+          </button>
+
+          <button class="workbench-app" data-nav="me">
+            <div class="workbench-app-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div class="workbench-app-name">我的</div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Recent messages (Feishu chat list) -->
+      <div class="section-header">
+        <span class="section-title">消息</span>
+        <span class="section-more">全部已读</span>
+      </div>
+      <div class="feishu-msg-list">
+
+        <div class="feishu-msg-item">
+          <div class="feishu-msg-avatar" style="background:#fa5400">N<span class="badge">3</span></div>
+          <div class="feishu-msg-body">
+            <div class="feishu-msg-row1">
+              <span class="feishu-msg-name">Nike 区域运营群</span>
+              <span class="feishu-msg-time">10:32</span>
+            </div>
+            <div class="feishu-msg-preview">Q3 主推产品培训资料已更新, 请本周内完成...</div>
+          </div>
+        </div>
+
+        <div class="feishu-msg-item">
+          <div class="feishu-msg-avatar" style="background:#3370ff">李<span class="badge">1</span></div>
+          <div class="feishu-msg-body">
+            <div class="feishu-msg-row1">
+              <span class="feishu-msg-name" data-profile-manager>李志远</span>
+              <span class="feishu-msg-time">9:58</span>
+            </div>
+            <div class="feishu-msg-preview">下周 OPR 巡店路线发你了, 重点看下徐家汇店</div>
+          </div>
+        </div>
+
+        <div class="feishu-msg-item">
+          <div class="feishu-msg-avatar" style="background:#00b96b">学</div>
+          <div class="feishu-msg-body">
+            <div class="feishu-msg-row1">
+              <span class="feishu-msg-name">学道 Swoosh AI</span>
+              <span class="feishu-msg-time">昨天</span>
+            </div>
+            <div class="feishu-msg-preview">你今天有 2 节培训待完成, 1 节直播预告</div>
+          </div>
+        </div>
+
+        <div class="feishu-msg-item">
+          <div class="feishu-msg-avatar" style="background:#ff8800">R</div>
+          <div class="feishu-msg-body">
+            <div class="feishu-msg-row1">
+              <span class="feishu-msg-name">Retail Link 系统</span>
+              <span class="feishu-msg-time">昨天</span>
+            </div>
+            <div class="feishu-msg-preview">本周 Listen U 数据已生成, NPS +3.2</div>
+          </div>
+        </div>
+
+        <div class="feishu-msg-item">
+          <div class="feishu-msg-avatar" style="background:#646a73">王</div>
+          <div class="feishu-msg-body">
+            <div class="feishu-msg-row1">
+              <span class="feishu-msg-name">王芳 (静安店店长)</span>
+              <span class="feishu-msg-time">周三</span>
+            </div>
+            <div class="feishu-msg-preview">OPR 自评表已提交, 麻烦看下</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="height:24px"></div>
+    </div>
+
+    <!-- ============ PAGE: APPS (Feishu workbench grid) ============ -->
+    <div class="page" id="page-apps">
+      <div class="section" style="margin-top:12px">
+        <div class="section-header"><span class="section-title">编辑常用</span><span class="section-more">完成</span></div>
+        <div class="workbench">
+          <div class="workbench-grid" id="apps-full-grid">
+            <!-- Filled by JS, mirrors workbench + adds Feishu default apps -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PAGE: XUEDAO (学道 home) ============ -->
+    <div class="page" id="page-xuedao">
+      <div class="xuedao-hero">
+        <div class="xuedao-brand">
+          <div>
+            <div class="xuedao-brand-mark">✓</div>
+          </div>
+          <div>
+            <div class="xuedao-brand-name">学道</div>
+            <div class="xuedao-brand-en">XUEDAO · NIKE LEARNING</div>
+          </div>
+        </div>
+
+        <div class="xuedao-ai-box">
+          <input type="text" class="xuedao-ai-input" id="xuedao-input" placeholder="问 AI: 产品 / 培训 / 门店运营..." onclick="xdOpenChat()">
+          <button class="xuedao-ai-send" onclick="xdOpenChat()">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+          </button>
+        </div>
+
+        <div class="xuedao-quickprompts">
+          <button class="xuedao-quickprompts-item" onclick="xdOpenChat('Air Max 系列核心科技是什么?')">Air Max 卖点</button>
+          <button class="xuedao-quickprompts-item" onclick="xdOpenChat('OPR 巡店流程')">OPR 巡店</button>
+          <button class="xuedao-quickprompts-item" onclick="xdOpenChat('我该上什么培训')">我的培训</button>
+          <button class="xuedao-quickprompts-item" onclick="xdOpenChat('Dri-FIT 怎么介绍给顾客')">Dri-FIT 话术</button>
+          <button class="xuedao-quickprompts-item" onclick="xdOpenChat('Listen U NPS 怎么看')">Listen U</button>
+        </div>
+      </div>
+
+      <div class="xd-features">
+        <div class="xd-feature" onclick="xdOpenChat('当季主推产品卖点')">
+          <div class="xd-feature-icon nike-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 17l6-12 4 9 3-6 5 12z"/></svg>
+          </div>
+          <div class="xd-feature-title">产品知识</div>
+          <div class="xd-feature-desc">Nike 全线产品科技 / 卖点 / 价格</div>
+        </div>
+
+        <div class="xd-feature" data-nav="training">
+          <div class="xd-feature-icon nike-black">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 10v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>
+          </div>
+          <div class="xd-feature-title">培训课程</div>
+          <div class="xd-feature-desc">必修 + 选修, 按职级推荐</div>
+        </div>
+
+        <div class="xd-feature" data-nav="live">
+          <div class="xd-feature-icon nike-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          </div>
+          <div class="xd-feature-title">直播课堂</div>
+          <div class="xd-feature-desc">区域例会 / 大咖分享</div>
+        </div>
+
+        <div class="xd-feature" data-nav="me">
+          <div class="xd-feature-icon nike-black">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <div class="xd-feature-title">我的学习</div>
+          <div class="xd-feature-desc">进度 / 证书 / 千人千面</div>
+        </div>
+      </div>
+
+      <div style="height:24px"></div>
+    </div>
+
+    <!-- ============ PAGE: XUEDAO CHAT (overlay) ============ -->
+    <div class="xd-chat" id="xd-chat">
+      <div class="xd-chat-header">
+        <button class="xd-chat-back" onclick="xdCloseChat()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="xd-chat-title">Swoosh AI · 学道</div>
+        <div style="width:32px"></div>
+      </div>
+      <div class="xd-chat-stream" id="xd-chat-stream"></div>
+      <div class="xd-chat-inputbar">
+        <input type="text" class="xd-chat-input" id="xd-input" placeholder="输入问题...">
+        <button class="xd-chat-send" id="xd-send-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============ PAGE: RETAIL LINK ============ -->
+    <div class="page" id="page-retaillink">
+      <div class="rl-header">
+        <div class="rl-brand">
+          <div>
+            <div class="rl-brand-name">Retail Link</div>
+            <div class="rl-brand-en">NIKE GC · RETAIL OPERATIONS</div>
+          </div>
+        </div>
+        <div class="rl-greeting">早, <strong data-profile-name>张云海</strong> · 今天有 <strong>3</strong> 项待办</div>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="rl-section">
+        <div class="rl-section-title">
+          <span>本周运营指标</span>
+          <span class="rl-section-title-meta" data-profile-region>华东大区</span>
+        </div>
+        <div class="rl-quickstats">
+          <div class="rl-quickstat">
+            <div class="rl-quickstat-label">OPR 巡店完成</div>
+            <div class="rl-quickstat-num">7/9</div>
+            <div class="rl-quickstat-delta up">↑ 较上周 +2</div>
+          </div>
+          <div class="rl-quickstat">
+            <div class="rl-quickstat-label">Listen U NPS</div>
+            <div class="rl-quickstat-num">+62</div>
+            <div class="rl-quickstat-delta up">↑ 较上周 +3.2</div>
+          </div>
+          <div class="rl-quickstat">
+            <div class="rl-quickstat-label">LIDAR 品牌健康</div>
+            <div class="rl-quickstat-num">87</div>
+            <div class="rl-quickstat-delta up">↑ 领先对手 NSR</div>
+          </div>
+          <div class="rl-quickstat">
+            <div class="rl-quickstat-label">培训完成率</div>
+            <div class="rl-quickstat-num">92%</div>
+            <div class="rl-quickstat-delta down">↓ 落后大区均值 5%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature grid -->
+      <div class="rl-section">
+        <div class="rl-section-title">
+          <span>运营工具</span>
+          <span class="rl-section-title-meta">9 项</span>
+        </div>
+        <div class="rl-feature-grid">
+
+          <button class="rl-feature" onclick="alert('跳转 OPR 巡店 → http://www.zhangyunhai.com/feedback/opr.html')">
+            <div class="rl-feature-icon solid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div class="rl-feature-name">OPR 巡店</div>
+            <div class="rl-feature-sub">9 家门店</div>
+          </button>
+
+          <button class="rl-feature" onclick="alert('跳转 Listen U → http://www.zhangyunhai.com/feedback/listen-u.html')">
+            <div class="rl-feature-icon solid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12c2-4 6-7 9-7s7 3 9 7c-2 4-6 7-9 7s-7-3-9-7z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            </div>
+            <div class="rl-feature-name">Listen U</div>
+            <div class="rl-feature-sub">NPS +62</div>
+          </button>
+
+          <button class="rl-feature" onclick="alert('跳转 Survey 反馈 → http://www.zhangyunhai.com/feedback/surveys.html')">
+            <div class="rl-feature-icon dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+            </div>
+            <div class="rl-feature-name">Survey</div>
+            <div class="rl-feature-sub">5 个项目</div>
+          </button>
+
+          <button class="rl-feature" onclick="alert('跳转 LIDAR → http://www.zhangyunhai.com/feedback/lidarr.html')">
+            <div class="rl-feature-icon dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18"/></svg>
+            </div>
+            <div class="rl-feature-name">LIDAR</div>
+            <div class="rl-feature-sub">品牌监测</div>
+          </button>
+
+          <button class="rl-feature">
+            <div class="rl-feature-icon solid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11l18-8-8 18-2-8z"/></svg>
+            </div>
+            <div class="rl-feature-name">经销商指令</div>
+            <div class="rl-feature-sub">区域级</div>
+          </button>
+
+          <button class="rl-feature">
+            <div class="rl-feature-icon solid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M4 20V8l8-5 8 5v12"/><path d="M9 20v-6h6v6"/></svg>
+            </div>
+            <div class="rl-feature-name">区域数据</div>
+            <div class="rl-feature-sub">实时看板</div>
+          </button>
+
+          <button class="rl-feature">
+            <div class="rl-feature-icon solid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg>
+            </div>
+            <div class="rl-feature-name">Live 周报</div>
+            <div class="rl-feature-sub">每周一</div>
+          </button>
+
+          <button class="rl-feature">
+            <div class="rl-feature-icon solid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4-10-4z"/><path d="M6 10v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>
+            </div>
+            <div class="rl-feature-name">培训下发</div>
+            <div class="rl-feature-sub">9 家门店</div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Recent activity -->
+      <div class="rl-section">
+        <div class="rl-section-title">
+          <span>最近活动</span>
+          <span class="rl-section-title-meta">查看全部</span>
+        </div>
+        <div class="feishu-msg-list" style="margin:0">
+          <div class="feishu-msg-item">
+            <div class="feishu-msg-avatar" style="background:#00b96b;width:36px;height:36px;font-size:13px">徐</div>
+            <div class="feishu-msg-body">
+              <div class="feishu-msg-row1">
+                <span class="feishu-msg-name" style="font-size:14px">徐家汇店 OPR 自评已提交</span>
+                <span class="feishu-msg-time">10:15</span>
+              </div>
+              <div class="feishu-msg-preview">店长 王芳 · 评分 92 / 100</div>
+            </div>
+          </div>
+          <div class="feishu-msg-item">
+            <div class="feishu-msg-avatar" style="background:#3370ff;width:36px;height:36px;font-size:13px">N</div>
+            <div class="feishu-msg-body">
+              <div class="feishu-msg-row1">
+                <span class="feishu-msg-name" style="font-size:14px">Nike HQ: Q3 主推清单发布</span>
+                <span class="feishu-msg-time">9:30</span>
+              </div>
+              <div class="feishu-msg-preview">Vomero 5 / Air Max 270 / Pegasus 41</div>
+            </div>
+          </div>
+          <div class="feishu-msg-item">
+            <div class="feishu-msg-avatar" style="background:#fa5400;width:36px;height:36px;font-size:13px">L</div>
+            <div class="feishu-msg-body">
+              <div class="feishu-msg-row1">
+                <span class="feishu-msg-name" style="font-size:14px">Listen U: 本周 NPS 报表</span>
+                <span class="feishu-msg-time">昨天</span>
+              </div>
+              <div class="feishu-msg-preview">华东大区 +62 (上周 +58.8)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:24px"></div>
+    </div>
+
+    <!-- ============ PAGE: ME (我的) ============ -->
+    <div class="page" id="page-me">
+      <div class="profile-header">
+        <div class="profile-row">
+          <div class="profile-avatar" data-profile-initials>ZYH</div>
+          <div style="flex:1">
+            <div class="profile-name" data-profile-name>张云海</div>
+            <div class="profile-title">
+              <span class="profile-title-badge" data-profile-level>L5</span>
+              <span data-profile-title>区域运营经理</span>
+            </div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px" data-profile-dept>Nike GC - Retail Operations</div>
+          </div>
+        </div>
+        <div class="profile-stats">
+          <div class="profile-stat">
+            <div class="profile-stat-num" data-profile-stores>9</div>
+            <div class="profile-stat-label">管辖门店</div>
+          </div>
+          <div class="profile-stat">
+            <div class="profile-stat-num">42</div>
+            <div class="profile-stat-label">培训学时</div>
+          </div>
+          <div class="profile-stat">
+            <div class="profile-stat-num">12</div>
+            <div class="profile-stat-label">认证证书</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="training-section">
+        <div class="training-title">
+          <span>我该上的培训</span>
+          <span class="training-title-tag">千人千面</span>
+        </div>
+        <div style="font-size:11px;color:var(--fs-text-tertiary);margin:0 4px 8px">
+          基于你的职级 <strong data-profile-level>L5</strong> + 岗位 <strong data-profile-title>区域运营经理</strong> + 区域 <strong data-profile-region>华东</strong> 自动推荐
+        </div>
+
+        <div class="training-card">
+          <div class="training-icon required">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 10v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>
+          </div>
+          <div class="training-body">
+            <div class="training-name">Q3 当季主推产品 (Air Max / Vomero)</div>
+            <div class="training-meta">
+              <span class="training-tag required">必修</span>
+              <span>截止 本周五</span>
+              <span>· 30 min</span>
+            </div>
+          </div>
+          <div class="training-arrow">›</div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-icon required">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M5 21v-1a7 7 0 0114 0v1"/></svg>
+          </div>
+          <div class="training-body">
+            <div class="training-name">新员工带训 SOP v2.3</div>
+            <div class="training-meta">
+              <span class="training-tag required">必修</span>
+              <span>L5 必修</span>
+              <span>· 45 min</span>
+            </div>
+          </div>
+          <div class="training-arrow">›</div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-icon live">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          </div>
+          <div class="training-body">
+            <div class="training-name">Q3 战略解读 (区域经理专场)</div>
+            <div class="training-meta">
+              <span class="training-tag" style="background:rgba(255,136,0,0.12);color:#ff8800">直播</span>
+              <span>下周二 14:00</span>
+              <span>· 60 min</span>
+            </div>
+          </div>
+          <div class="training-arrow">›</div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-icon optional">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12c2-4 6-7 9-7s7 3 9 7c-2 4-6 7-9 7s-7-3-9-7z"/><circle cx="12" cy="12" r="2.5"/></svg>
+          </div>
+          <div class="training-body">
+            <div class="training-name">Listen U 反馈处理流程</div>
+            <div class="training-meta">
+              <span class="training-tag optional">选修</span>
+              <span>L5 推荐</span>
+              <span>· 25 min</span>
+            </div>
+          </div>
+          <div class="training-arrow">›</div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-icon optional">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <div class="training-body">
+            <div class="training-name">区域经理教练力</div>
+            <div class="training-meta">
+              <span class="training-tag optional">选修</span>
+              <span>8 节课程</span>
+              <span>· 进阶</span>
+            </div>
+          </div>
+          <div class="training-arrow">›</div>
+        </div>
+
+        <div style="height:32px"></div>
+      </div>
+    </div>
+
+    <!-- ============ PAGE: TRAINING LIBRARY (placeholder) ============ -->
+    <div class="placeholder-page" id="page-training">
+      <div class="placeholder-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 10v5c0 1 3 3 6 3s6-2 6-3v-5"/><path d="M22 7v6"/></svg>
+      </div>
+      <div class="placeholder-title">培训库</div>
+      <div class="placeholder-desc">所有 Nike 培训课程按品类 / 职级 / 季节筛选, 千人千面推荐</div>
+    </div>
+
+    <!-- ============ PAGE: LIVE (placeholder) ============ -->
+    <div class="placeholder-page" id="page-live">
+      <div class="placeholder-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+      </div>
+      <div class="placeholder-title">直播课堂</div>
+      <div class="placeholder-desc">区域例会 / 大咖分享 / 新品发布实时直播</div>
+    </div>
+
+  </div>
+
+  <!-- Tabbar (5 items) -->
+  <div class="tabbar">
+    <button class="tabbar-item active" data-tab="messages">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>
+      <span class="tabbar-label">消息</span>
+    </button>
+    <button class="tabbar-item" data-tab="apps">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span class="tabbar-label">工作台</span>
+    </button>
+    <button class="tabbar-item" data-tab="xuedao">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l5-15 4 9 3-6 4 12z"/></svg>
+      <span class="tabbar-label">学道</span>
+    </button>
+    <button class="tabbar-item" data-tab="retaillink">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <span class="tabbar-label">Retail</span>
+    </button>
+    <button class="tabbar-item" data-tab="me">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      <span class="tabbar-label">我的</span>
+    </button>
+  </div>
+
+</div>
+
+<script src="js/shell.js"></script>
+<script src="js/xuedao.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const titles = {
+    messages: "消息",
+    apps: "工作台",
+    xuedao: "学道",
+    retaillink: "Retail Link",
+    me: "我的",
+    training: "培训库",
+    live: "直播"
+  };
+  const orig = window.navigate;
+  window.navigate = function(tab) {
+    orig(tab);
+    const t = document.getElementById("topbar-title");
+    if (t) t.textContent = titles[tab] || "";
+  };
+  window.navigate((location.hash || "#messages").slice(1));
+
+  const profileInit = document.querySelector("[data-profile-initials]");
+  if (profileInit && FS.user && FS.user.avatar_initials) profileInit.textContent = FS.user.avatar_initials;
+
+  const fullGrid = document.getElementById("apps-full-grid");
+  if (fullGrid) {
+    const mini = document.querySelector(".workbench-grid");
+    fullGrid.innerHTML = mini.innerHTML;
+  }
+});
+</script>
+</body>
+</html>

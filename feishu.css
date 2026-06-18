@@ -1,0 +1,1236 @@
+/* ============================================================
+   Feishu Mobile Prototype - Nike Internal H5 Tools
+   ============================================================ */
+
+:root {
+  --fs-bg: #f5f6f7;
+  --fs-bg-card: #ffffff;
+  --fs-text: #1f2329;
+  --fs-text-secondary: #646a73;
+  --fs-text-tertiary: #8f959e;
+  --fs-primary: #3370ff;
+  --fs-primary-hover: #2860e6;
+  --fs-success: #00b96b;
+  --fs-warning: #ff8800;
+  --fs-danger: #f54a45;
+  --fs-border: #e5e6eb;
+  --fs-divider: #f2f3f5;
+  --fs-nike: #111111;
+  --fs-nike-orange: #fa5400;
+  --fs-nike-gray: #707272;
+  --fs-tabbar-h: 56px;
+  --fs-statusbar-h: 44px;
+  --fs-radius: 12px;
+  --fs-radius-lg: 20px;
+  --fs-shadow: 0 2px 8px rgba(31, 35, 41, 0.06);
+  --fs-shadow-lg: 0 6px 24px rgba(31, 35, 41, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
+               "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  color: var(--fs-text);
+  background: #2c3e50;
+  overflow: hidden;
+  user-select: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input, textarea {
+  font: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
+/* ============================================================
+   Phone frame (mobile simulation)
+   ============================================================ */
+.phone {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  margin: 0 auto;
+  background: var(--fs-bg);
+  border-radius: 44px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.phone-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  position: relative;
+}
+
+.phone-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================================
+   iOS status bar
+   ============================================================ */
+.statusbar {
+  height: var(--fs-statusbar-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fs-text);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.statusbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusbar-right svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============================================================
+   Topbar (Feishu nav)
+   ============================================================ */
+.topbar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: var(--fs-bg);
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--fs-divider);
+}
+
+.topbar-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--fs-text);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fs-text-secondary);
+}
+
+/* ============================================================
+   Tabbar (bottom nav)
+   ============================================================ */
+.tabbar {
+  height: var(--fs-tabbar-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--fs-divider);
+  flex-shrink: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.tabbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex: 1;
+  height: 100%;
+  color: var(--fs-text-tertiary);
+  transition: color 200ms;
+}
+
+.tabbar-item.active {
+  color: var(--fs-primary);
+}
+
+.tabbar-item svg {
+  width: 22px;
+  height: 22px;
+}
+
+.tabbar-label {
+  font-size: 11px;
+}
+
+/* ============================================================
+   Page container
+   ============================================================ */
+.page {
+  display: none;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* ============================================================
+   Common card
+   ============================================================ */
+.card {
+  background: var(--fs-bg-card);
+  border-radius: var(--fs-radius);
+  padding: 16px;
+  margin: 12px;
+  box-shadow: var(--fs-shadow);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card-meta {
+  font-size: 12px;
+  color: var(--fs-text-tertiary);
+}
+
+/* ============================================================
+   Section header
+   ============================================================ */
+.section {
+  margin-top: 16px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 16px 8px;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fs-text);
+}
+
+.section-more {
+  font-size: 12px;
+  color: var(--fs-text-tertiary);
+}
+
+/* ============================================================
+   Feishu message card (homepage)
+   ============================================================ */
+.feishu-msg-list {
+  background: var(--fs-bg-card);
+  margin: 8px 12px;
+  border-radius: var(--fs-radius);
+  overflow: hidden;
+}
+
+.feishu-msg-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--fs-divider);
+}
+
+.feishu-msg-item:last-child {
+  border-bottom: none;
+}
+
+.feishu-msg-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: var(--fs-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.feishu-msg-avatar .badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 18px;
+  height: 18px;
+  background: var(--fs-danger);
+  color: white;
+  border-radius: 9px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  font-weight: 500;
+}
+
+.feishu-msg-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.feishu-msg-row1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.feishu-msg-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--fs-text);
+}
+
+.feishu-msg-time {
+  font-size: 11px;
+  color: var(--fs-text-tertiary);
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.feishu-msg-preview {
+  font-size: 13px;
+  color: var(--fs-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Custom H5 apps (workbench section)
+   ============================================================ */
+.workbench {
+  background: var(--fs-bg-card);
+  margin: 12px;
+  border-radius: var(--fs-radius);
+  padding: 16px;
+}
+
+.workbench-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 0;
+  margin-top: 12px;
+}
+
+.workbench-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 4px;
+  border-radius: 8px;
+  transition: background 200ms;
+}
+
+.workbench-app:active {
+  background: var(--fs-divider);
+}
+
+.workbench-app-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fs-bg);
+  color: var(--fs-text);
+}
+
+.workbench-app-icon.xuedao {
+  background: linear-gradient(135deg, #111111 0%, #2d2d2d 100%);
+  color: var(--fs-nike-orange);
+}
+
+.workbench-app-icon.retaillink {
+  background: linear-gradient(135deg, #fa5400 0%, #ff7f32 100%);
+  color: white;
+}
+
+.workbench-app-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.workbench-app-name {
+  font-size: 11px;
+  color: var(--fs-text);
+  text-align: center;
+  line-height: 1.3;
+  max-width: 64px;
+  word-break: break-all;
+}
+
+.workbench-app-badge {
+  position: relative;
+}
+
+.workbench-app-badge::after {
+  content: attr(data-badge);
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  background: var(--fs-danger);
+  color: white;
+  border-radius: 8px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Banner
+   ============================================================ */
+.banner {
+  margin: 12px;
+  border-radius: var(--fs-radius);
+  height: 80px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #fa5400 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 120px;
+  height: 120px;
+  background: var(--fs-nike-orange);
+  opacity: 0.3;
+  border-radius: 50%;
+  filter: blur(30px);
+}
+
+.banner-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-subtitle {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-swoosh {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  font-weight: 900;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+/* ============================================================
+   Xuedao (学道) page
+   ============================================================ */
+.xuedao-hero {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 24px 16px 28px;
+  color: white;
+}
+
+.xuedao-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.xuedao-brand-mark {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--fs-nike-orange);
+  letter-spacing: -1px;
+}
+
+.xuedao-brand-name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.xuedao-brand-en {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.xuedao-ai-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 200ms;
+}
+
+.xuedao-ai-box:focus-within {
+  border-color: var(--fs-nike-orange);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.xuedao-ai-input {
+  flex: 1;
+  background: transparent;
+  color: white;
+  font-size: 15px;
+  caret-color: var(--fs-nike-orange);
+}
+
+.xuedao-ai-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.xuedao-ai-send {
+  width: 32px;
+  height: 32px;
+  background: var(--fs-nike-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.xuedao-ai-send svg {
+  width: 16px;
+  height: 16px;
+}
+
+.xuedao-quickprompts {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.xuedao-quickprompts::-webkit-scrollbar {
+  display: none;
+}
+
+.xuedao-quickprompts-item {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.xuedao-quickprompts-item:active {
+  background: rgba(250, 84, 0, 0.2);
+  border-color: var(--fs-nike-orange);
+}
+
+/* ============================================================
+   Feature cards (Xuedao)
+   ============================================================ */
+.xd-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 16px;
+}
+
+.xd-feature {
+  background: var(--fs-bg-card);
+  border-radius: var(--fs-radius);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.xd-feature-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.xd-feature-icon.nike-black {
+  background: #111;
+  color: var(--fs-nike-orange);
+}
+
+.xd-feature-icon.nike-orange {
+  background: var(--fs-nike-orange);
+  color: white;
+}
+
+.xd-feature-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.xd-feature-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.xd-feature-desc {
+  font-size: 11px;
+  color: var(--fs-text-tertiary);
+  line-height: 1.4;
+}
+
+/* ============================================================
+   AI Chat (Xuedao)
+   ============================================================ */
+.xd-chat {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  background: var(--fs-bg);
+}
+
+.xd-chat.active {
+  display: flex;
+}
+
+.xd-chat-header {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  background: var(--fs-bg-card);
+  border-bottom: 1px solid var(--fs-divider);
+  flex-shrink: 0;
+}
+
+.xd-chat-back {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fs-text-secondary);
+}
+
+.xd-chat-title {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.xd-chat-stream {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 12px;
+  scroll-behavior: smooth;
+}
+
+.xd-chat-msg {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  animation: msgIn 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes msgIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.xd-chat-msg.user {
+  flex-direction: row-reverse;
+}
+
+.xd-chat-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.xd-chat-msg.ai .xd-chat-avatar {
+  background: linear-gradient(135deg, #111, #2d2d2d);
+  color: var(--fs-nike-orange);
+}
+
+.xd-chat-msg.user .xd-chat-avatar {
+  background: var(--fs-primary);
+  color: white;
+}
+
+.xd-chat-bubble {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.xd-chat-msg.ai .xd-chat-bubble {
+  background: var(--fs-bg-card);
+  color: var(--fs-text);
+  border-top-left-radius: 4px;
+  box-shadow: var(--fs-shadow);
+}
+
+.xd-chat-msg.user .xd-chat-bubble {
+  background: var(--fs-primary);
+  color: white;
+  border-top-right-radius: 4px;
+}
+
+.xd-chat-bubble.typing {
+  display: flex;
+  gap: 4px;
+  padding: 14px 16px;
+}
+
+.xd-chat-bubble.typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fs-text-tertiary);
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.xd-chat-bubble.typing span:nth-child(2) { animation-delay: 0.15s; }
+.xd-chat-bubble.typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+.xd-chat-inputbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--fs-bg-card);
+  border-top: 1px solid var(--fs-divider);
+  flex-shrink: 0;
+}
+
+.xd-chat-input {
+  flex: 1;
+  height: 36px;
+  background: var(--fs-bg);
+  border-radius: 18px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.xd-chat-send {
+  width: 36px;
+  height: 36px;
+  background: var(--fs-nike-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  transition: transform 100ms;
+}
+
+.xd-chat-send:active {
+  transform: scale(0.92);
+}
+
+.xd-chat-send:disabled {
+  background: var(--fs-text-tertiary);
+  opacity: 0.6;
+}
+
+.xd-chat-send svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============================================================
+   Profile / My page
+   ============================================================ */
+.profile-header {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 24px 16px 40px;
+  color: white;
+  position: relative;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--fs-nike-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.profile-title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-title-badge {
+  padding: 2px 8px;
+  background: rgba(250, 84, 0, 0.25);
+  color: var(--fs-nike-orange);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.profile-stat {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.profile-stat-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.profile-stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+/* Training cards (千人千面) */
+.training-section {
+  margin-top: -20px;
+  padding: 0 12px;
+}
+
+.training-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 16px 4px 8px;
+}
+
+.training-title-tag {
+  font-size: 10px;
+  padding: 1px 6px;
+  background: rgba(250, 84, 0, 0.12);
+  color: var(--fs-nike-orange);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.training-card {
+  background: var(--fs-bg-card);
+  border-radius: var(--fs-radius);
+  padding: 14px;
+  margin-bottom: 8px;
+  box-shadow: var(--fs-shadow);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.training-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.training-icon.required {
+  background: rgba(245, 74, 69, 0.12);
+  color: var(--fs-danger);
+}
+
+.training-icon.optional {
+  background: rgba(0, 185, 107, 0.12);
+  color: var(--fs-success);
+}
+
+.training-icon.live {
+  background: rgba(255, 136, 0, 0.12);
+  color: var(--fs-warning);
+}
+
+.training-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.training-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.training-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.training-meta {
+  font-size: 11px;
+  color: var(--fs-text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.training-tag {
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.training-tag.required {
+  background: rgba(245, 74, 69, 0.1);
+  color: var(--fs-danger);
+}
+
+.training-tag.optional {
+  background: rgba(0, 185, 107, 0.1);
+  color: var(--fs-success);
+}
+
+.training-arrow {
+  color: var(--fs-text-tertiary);
+  font-size: 18px;
+}
+
+/* ============================================================
+   Retail Link grid
+   ============================================================ */
+.rl-header {
+  background: linear-gradient(180deg, #fa5400 0%, #d9480f 100%);
+  padding: 20px 16px 24px;
+  color: white;
+}
+
+.rl-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.rl-brand-name {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.rl-brand-en {
+  font-size: 11px;
+  opacity: 0.8;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.rl-greeting {
+  font-size: 13px;
+  opacity: 0.95;
+  margin-top: 12px;
+}
+
+.rl-greeting strong {
+  font-weight: 600;
+}
+
+.rl-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 0;
+  padding: 16px;
+  background: var(--fs-bg-card);
+  margin: 12px;
+  border-radius: var(--fs-radius);
+}
+
+.rl-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+.rl-feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fs-bg);
+  color: var(--fs-nike-orange);
+}
+
+.rl-feature-icon.solid {
+  background: var(--fs-nike-orange);
+  color: white;
+}
+
+.rl-feature-icon.dark {
+  background: #111;
+  color: var(--fs-nike-orange);
+}
+
+.rl-feature-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.rl-feature-name {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 70px;
+}
+
+.rl-feature-sub {
+  font-size: 10px;
+  color: var(--fs-text-tertiary);
+  text-align: center;
+}
+
+.rl-section {
+  margin: 12px;
+  background: var(--fs-bg-card);
+  border-radius: var(--fs-radius);
+  padding: 16px;
+}
+
+.rl-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rl-section-title-meta {
+  font-size: 11px;
+  color: var(--fs-text-tertiary);
+  font-weight: 400;
+}
+
+.rl-quickstats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.rl-quickstat {
+  background: var(--fs-bg);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.rl-quickstat-label {
+  font-size: 11px;
+  color: var(--fs-text-tertiary);
+  margin-bottom: 4px;
+}
+
+.rl-quickstat-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fs-text);
+}
+
+.rl-quickstat-delta {
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.rl-quickstat-delta.up { color: var(--fs-success); }
+.rl-quickstat-delta.down { color: var(--fs-danger); }
+
+/* ============================================================
+   Training / Live placeholder pages
+   ============================================================ */
+.placeholder-page {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+  flex: 1;
+  background: var(--fs-bg);
+}
+
+.placeholder-page.active {
+  display: flex;
+}
+
+.placeholder-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: var(--fs-divider);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--fs-text-tertiary);
+}
+
+.placeholder-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.placeholder-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.placeholder-desc {
+  font-size: 13px;
+  color: var(--fs-text-tertiary);
+  line-height: 1.5;
+  max-width: 240px;
+}
+
+/* ============================================================
+   Animations
+   ============================================================ */
+.fade-in {
+  animation: fadeIn 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hide phone frame when embedded */
+@media (max-width: 430px) {
+  html, body {
+    background: var(--fs-bg);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

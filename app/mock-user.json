@@ -1,0 +1,25 @@
+{
+  "user": {
+    "id": "yunhai.zhang",
+    "name": "张云海",
+    "name_en": "Yunhai Zhang",
+    "title": "区域运营经理",
+    "title_en": "Regional Operations Manager",
+    "department": "Nike GC - Retail Operations",
+    "level": "L5",
+    "employee_id": "GC-RTL-00428",
+    "avatar_initials": "ZYH",
+    "region": "华东大区 - 上海/苏州/杭州",
+    "stores_count": 9,
+    "manager": "李志远 (L6, 大区总监)",
+    "manager_email": "zhiyuan.li@nike.com",
+    "join_date": "2019-08-12",
+    "permissions": [
+      "OPR 巡店",
+      "Listen U 顾客反馈查看",
+      "LIDAR 品牌数据访问",
+      "区域培训下发",
+      "经销商指令 (区域级)"
+    ]
+  }
+}
