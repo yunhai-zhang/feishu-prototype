@@ -43,13 +43,10 @@
     <!-- ============ PAGE: MESSAGES (default Feishu home) ============ -->
     <div class="page active" id="page-messages">
 
-      <!-- Nike banner (CC promotion) -->
+      <!-- TARS banner (project brand) -->
       <div class="banner" data-app="retaillink">
-        <div>
-          <div class="banner-title">Nike TARS</div>
-          <div class="banner-subtitle">Training & AI-Driven Retail-Operation System</div>
-        </div>
-        <div class="banner-swoosh">✓</div>
+        <img src="assets/logos/tars.jpg" alt="TARS" class="banner-logo">
+        <div class="banner-tagline">Training &amp; AI-Driven Retail-Operation System</div>
       </div>
 
       <!-- Workbench: Nike H5 custom apps pinned -->
@@ -95,9 +92,10 @@
             <div class="workbench-app-name">OPR 巡店</div>
           </button>
 
-          <button class="workbench-app" data-app="retaillink">
-            <div class="workbench-app-icon retaillink">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12c2-4 6-7 9-7s7 3 9 7c-2 4-6 7-9 7s-7-3-9-7z"/><circle cx="12" cy="12" r="2.5"/></svg>
+          <button class="workbench-app" data-ai-traffic>
+            <div class="workbench-app-icon ai-traffic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 5 3-4 4 7z"/><circle cx="7" cy="17" r="1.2" fill="currentColor"/><circle cx="11" cy="9" r="1.2" fill="currentColor"/><circle cx="14" cy="14" r="1.2" fill="currentColor"/><circle cx="18" cy="17" r="1.2" fill="currentColor"/></svg>
+              <span class="ai-badge">AI</span>
             </div>
             <div class="workbench-app-name">AI客流分析</div>
           </button>
@@ -202,9 +200,7 @@
     <div class="page" id="page-xuedao">
       <div class="xuedao-hero">
         <div class="xuedao-brand">
-          <div>
-            <div class="xuedao-brand-mark">✓</div>
-          </div>
+          <img src="assets/logos/tars.jpg" alt="TARS" class="xuedao-logo">
           <div>
             <div class="xuedao-brand-name">学道</div>
             <div class="xuedao-brand-en">XUEDAO · NIKE LEARNING</div>
@@ -228,6 +224,15 @@
       </div>
 
       <div class="xd-features">
+        <div class="xd-feature xd-feature-aitraffic" data-ai-traffic>
+          <div class="xd-feature-icon nike-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 5 3-4 4 7z"/><circle cx="7" cy="17" r="1.2" fill="currentColor"/><circle cx="11" cy="9" r="1.2" fill="currentColor"/><circle cx="14" cy="14" r="1.2" fill="currentColor"/><circle cx="18" cy="17" r="1.2" fill="currentColor"/></svg>
+            <span class="xd-feature-aitag">AI</span>
+          </div>
+          <div class="xd-feature-title">AI 客流分析</div>
+          <div class="xd-feature-desc">门店热区 / 转化 / 时段分析</div>
+        </div>
+
         <div class="xd-feature" onclick="xdOpenChat('当季主推产品卖点')">
           <div class="xd-feature-icon nike-orange">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 17l6-12 4 9 3-6 5 12z"/></svg>
@@ -286,9 +291,10 @@
     <div class="page" id="page-retaillink">
       <div class="rl-header">
         <div class="rl-brand">
+          <img src="assets/logos/tars.jpg" alt="TARS" class="rl-logo">
           <div>
             <div class="rl-brand-name">Retail Link</div>
-            <div class="rl-brand-en">NIKE GC · RETAIL OPERATIONS</div>
+            <div class="rl-brand-en">TARS · Training &amp; AI-Driven Retail-Operation System</div>
           </div>
         </div>
         <div class="rl-greeting">早, <strong data-profile-name>张韵海</strong> · 今天有 <strong>3</strong> 项待办</div>
@@ -328,9 +334,18 @@
       <div class="rl-section">
         <div class="rl-section-title">
           <span>运营工具</span>
-          <span class="rl-section-title-meta">9 项</span>
+          <span class="rl-section-title-meta">10 项</span>
         </div>
         <div class="rl-feature-grid">
+
+          <button class="rl-feature" data-ai-traffic>
+            <div class="rl-feature-icon ai-traffic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 5 3-4 4 7z"/><circle cx="7" cy="17" r="1.2" fill="currentColor"/><circle cx="11" cy="9" r="1.2" fill="currentColor"/><circle cx="14" cy="14" r="1.2" fill="currentColor"/><circle cx="18" cy="17" r="1.2" fill="currentColor"/></svg>
+              <span class="ai-badge">AI</span>
+            </div>
+            <div class="rl-feature-name">AI 客流分析</div>
+            <div class="rl-feature-sub">门店热区</div>
+          </button>
 
           <button class="rl-feature" onclick="alert('跳转 OPR 巡店 → http://www.zhangyunhai.com/feedback/opr.html')">
             <div class="rl-feature-icon solid">
@@ -445,6 +460,7 @@
     <!-- ============ PAGE: ME (我的) ============ -->
     <div class="page" id="page-me">
       <div class="profile-header">
+        <img src="assets/logos/tars.jpg" alt="TARS" class="profile-logo">
         <div class="profile-row">
           <div class="profile-avatar" data-profile-initials>ZYH</div>
           <div style="flex:1">
@@ -473,6 +489,15 @@
       </div>
 
       <div class="training-section">
+        <div class="xd-feature xd-feature-aitraffic profile-ai" data-ai-traffic>
+          <div class="xd-feature-icon nike-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 5 3-4 4 7z"/><circle cx="7" cy="17" r="1.2" fill="currentColor"/><circle cx="11" cy="9" r="1.2" fill="currentColor"/><circle cx="14" cy="14" r="1.2" fill="currentColor"/><circle cx="18" cy="17" r="1.2" fill="currentColor"/></svg>
+            <span class="xd-feature-aitag">AI</span>
+          </div>
+          <div class="xd-feature-title">AI 客流分析</div>
+          <div class="xd-feature-desc">查看我管辖 9 家门店的客流热区 / 转化 / 时段分析</div>
+        </div>
+
         <div class="training-title">
           <span>我该上的培训</span>
           <span class="training-title-tag">千人千面</span>
@@ -560,6 +585,15 @@
       </div>
     </div>
 
+    <!-- ============ PAGE: AI 客流分析 (placeholder) ============ -->
+    <div class="placeholder-page" id="page-aitraffic">
+      <div class="placeholder-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 5 3-4 4 7z"/><circle cx="7" cy="17" r="1.2" fill="currentColor"/><circle cx="11" cy="9" r="1.2" fill="currentColor"/><circle cx="14" cy="14" r="1.2" fill="currentColor"/><circle cx="18" cy="17" r="1.2" fill="currentColor"/></svg>
+      </div>
+      <div class="placeholder-title">AI 客流分析</div>
+      <div class="placeholder-desc">基于门店摄像头 + POS 数据, AI 实时识别客流热区、转化漏斗、热点时段 — 占位</div>
+    </div>
+
     <!-- ============ PAGE: TRAINING LIBRARY (placeholder) ============ -->
     <div class="placeholder-page" id="page-training">
       <div class="placeholder-icon">
@@ -617,7 +651,8 @@ document.addEventListener("DOMContentLoaded", () => {
     retaillink: "Retail Link",
     me: "我的",
     training: "培训库",
-    live: "直播"
+    live: "直播",
+    aitraffic: "AI 客流分析"
   };
   const orig = window.navigate;
   window.navigate = function(tab) {

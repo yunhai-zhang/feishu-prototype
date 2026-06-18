@@ -65,6 +65,8 @@ function navigate(tab) {
     document.getElementById("page-training").classList.add("active");
   } else if (tab === "live") {
     document.getElementById("page-live").classList.add("active");
+  } else if (tab === "aitraffic") {
+    document.getElementById("page-aitraffic").classList.add("active");
   }
 
   FS.currentPage = tab;
@@ -72,7 +74,7 @@ function navigate(tab) {
 }
 
 document.addEventListener("click", (e) => {
-  const t = e.target.closest("[data-tab], [data-nav], [data-app]");
+  const t = e.target.closest("[data-tab], [data-nav], [data-app], [data-ai-traffic]");
   if (!t) return;
 
   if (t.dataset.tab) {
@@ -87,17 +89,20 @@ document.addEventListener("click", (e) => {
   } else if (t.dataset.nav) {
     e.preventDefault();
     navigate(t.dataset.nav);
+  } else if (t.dataset.aiTraffic !== undefined || t.hasAttribute("data-ai-traffic")) {
+    e.preventDefault();
+    navigate("aitraffic");
   }
 });
 
 window.addEventListener("hashchange", () => {
   const h = (location.hash || "#messages").slice(1);
-  if (["messages", "apps", "xuedao", "retaillink", "me", "training", "live"].includes(h)) {
+  if (["messages", "apps", "xuedao", "retaillink", "me", "training", "live", "aitraffic"].includes(h)) {
     navigate(h);
   }
 });
 
 window.addEventListener("DOMContentLoaded", () => {
   const h = (location.hash || "#messages").slice(1);
-  navigate(["messages", "apps", "xuedao", "retaillink", "me", "training", "live"].includes(h) ? h : "messages");
+  navigate(["messages", "apps", "xuedao", "retaillink", "me", "training", "live", "aitraffic"].includes(h) ? h : "messages");
 });

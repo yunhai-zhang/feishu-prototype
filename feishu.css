@@ -352,9 +352,13 @@ input, textarea {
 
 .workbench-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px 0;
   margin-top: 12px;
+}
+
+.workbench-grid.five-col {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .workbench-app {
@@ -390,6 +394,26 @@ input, textarea {
 .workbench-app-icon.retaillink {
   background: linear-gradient(135deg, #fa5400 0%, #ff7f32 100%);
   color: white;
+}
+
+.workbench-app-icon.ai-traffic {
+  background: linear-gradient(135deg, #111111 0%, #2d2d2d 100%);
+  color: var(--fs-nike-orange);
+  position: relative;
+}
+
+.ai-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  font-size: 8px;
+  font-weight: 800;
+  padding: 1px 5px;
+  background: var(--fs-nike-orange);
+  color: white;
+  border-radius: 6px 6px 6px 2px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .workbench-app-icon svg {
@@ -484,6 +508,28 @@ input, textarea {
   z-index: 1;
 }
 
+.banner-logo {
+  height: 48px;
+  width: auto;
+  position: relative;
+  z-index: 1;
+  background: white;
+  border-radius: 6px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.banner-tagline {
+  position: relative;
+  z-index: 1;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
 /* ============================================================
    Xuedao (学道) page
    ============================================================ */
@@ -496,8 +542,14 @@ input, textarea {
 .xuedao-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 20px;
+}
+
+.xuedao-logo {
+  height: 36px;
+  width: auto;
+  flex-shrink: 0;
 }
 
 .xuedao-brand-mark {
@@ -635,6 +687,53 @@ input, textarea {
 .xd-feature-icon svg {
   width: 20px;
   height: 20px;
+}
+
+.xd-feature-icon {
+  position: relative;
+}
+
+.xd-feature-aitag {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 8px;
+  font-weight: 800;
+  padding: 1px 5px;
+  background: var(--fs-nike-orange);
+  color: white;
+  border-radius: 6px 6px 6px 2px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.xd-feature.xd-feature-aitraffic {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+}
+
+.xd-feature.xd-feature-aitraffic .xd-feature-title {
+  color: white;
+}
+
+.xd-feature.xd-feature-aitraffic .xd-feature-desc {
+  color: rgba(255,255,255,0.65);
+}
+
+.rl-feature-icon.ai-traffic {
+  background: linear-gradient(135deg, #111 0%, #2d2d2d 100%);
+  color: var(--fs-nike-orange);
+  position: relative;
+}
+
+.xd-feature.profile-ai {
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: transform 200ms;
+}
+
+.xd-feature.profile-ai:active {
+  transform: scale(0.98);
 }
 
 .xd-feature-title {
@@ -835,6 +934,15 @@ input, textarea {
   position: relative;
 }
 
+.profile-logo {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 28px;
+  width: auto;
+  opacity: 0.95;
+}
+
 .profile-row {
   display: flex;
   align-items: center;
@@ -1023,8 +1131,14 @@ input, textarea {
 .rl-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 6px;
+}
+
+.rl-logo {
+  height: 44px;
+  width: auto;
+  flex-shrink: 0;
 }
 
 .rl-brand-name {
